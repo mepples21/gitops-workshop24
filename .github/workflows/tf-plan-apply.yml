@@ -32,7 +32,7 @@ jobs:
       - name: Terraform Init
         run: >-
           terraform init
-          -migrate-state
+          -reconfigure
           -backend-config="username=$ZTL_USERNAME"
           -backend-config="password=$ZTL_API_TOKEN"
         env:
