@@ -85,3 +85,11 @@ resource "zentral_mdm_filevault_config" "default" {
   destroy_key_on_standby       = true
   show_recovery_key            = false
 }
+
+resource "zentral_mdm_blueprint" "default" {
+  name                 = "Default"
+  collect_apps         = "ALL"
+  collect_certificates = "ALL"
+  collect_profiles     = "ALL"
+  filevault_config_id  = zentral_mdm_filevault_config.default.id
+}
