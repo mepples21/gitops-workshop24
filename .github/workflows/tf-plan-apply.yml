@@ -131,6 +131,7 @@ jobs:
           terraform init
           -backend-config="username=$ZTL_USERNAME"
           -backend-config="password=$ZTL_API_TOKEN"
+          -migrate-state
         env:
           ZTL_USERNAME: ${{ vars.ZTL_USERNAME }}
           ZTL_API_TOKEN: ${{ secrets.ZTL_API_TOKEN }}
