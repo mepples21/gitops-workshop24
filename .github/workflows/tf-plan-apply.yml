@@ -128,10 +128,9 @@ jobs:
       # loading any remote state, downloading modules, etc.
       - name: Terraform Init
         run: >-
-          terraform init
+          terraform init -migrate-state
           -backend-config="username=$ZTL_USERNAME"
           -backend-config="password=$ZTL_API_TOKEN"
-          -migrate-state
         env:
           ZTL_USERNAME: ${{ vars.ZTL_USERNAME }}
           ZTL_API_TOKEN: ${{ secrets.ZTL_API_TOKEN }}
@@ -145,4 +144,4 @@ jobs:
       # Terraform Apply
       - name: Terraform Apply
         run: terraform apply -auto-approve tfplan
-#test1
+#test2
